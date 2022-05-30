@@ -1,0 +1,12 @@
+keras~=2.9.0
+numpy~=1.22.3
+pandas~=1.4.2
+matplotlib~=3.5.2
+yfinance~=0.1.70
+Flask~=2.1.2
+requests~=2.27.1
+Werkzeug~=2.1.2
+SQLAlchemy~=1.4.36
+sklearn~=0.0
+scikit-learn~=1.1.1
+tensorflow~=2.9.0
