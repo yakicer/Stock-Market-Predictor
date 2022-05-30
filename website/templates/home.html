@@ -1,0 +1,80 @@
+{%extends "base.html" %} {% block title %}Home{% endblock %}
+{% block content %}
+
+<style>
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh
+}
+h1{
+  text-align:center;
+  color: #484848;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 7px;
+  cursor: pointer
+}
+h2{
+  text-align:center;
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 10px;
+ 
+}
+
+h3{
+  text-align:center;
+  color: #c7c7c7;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 3px;
+
+}
+
+h1 span{
+  transition: .5s linear
+}
+h1:hover span:nth-child(1){
+  margin-right: 5px
+}
+h1:hover span:nth-child(1):after{
+  content: "";
+}
+h1:hover span:nth-child(2){
+  margin-left: 30px
+}
+h1:hover span{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+}
+</style>
+
+<h2><span>HOŞGELDİN!</span></h2>
+<br><br><br><br>
+<h3><span>Merak etme içerisi oldukça renkli :)</span></h3>
+<br><br><br><br><br>
+<a style="text-decoration: none" href="/login"><h1><span>Giriş</span><span>Yap</span></h1></a>
+<br>
+<a style="text-decoration: none" href="/sign_up"><h1><span>Kayıt</span><span>Ol</span></h1></a>
+
+{% endblock %}
+
+
+.status {
+	animation: fadeIn var(--dur1) linear forwards;
+	text-align: center;
+}

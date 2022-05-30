@@ -1,0 +1,73 @@
+{%extends "base.html" %} {% block title %}Kayıt Ol{% endblock %}
+{% block content %}
+<style>
+body {
+  background-image: url('https://images.pexels.com/photos/7130498/pexels-photo-7130498.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<form method="POST">
+    <h1 class="display-1 font-weight-normal text-white" align="center">Kayıt Ol</h1>
+    <div class="form-group">
+        <label class=" h1 font-weight-light text-white " for="email">Mail</label>
+        <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Mail Adresinizi Giriniz"
+        />
+    </div>
+       <div class="form-group">
+        <label class=" h1 font-weight-light text-white " for="firstName">Ad</label>
+        <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Adınızı Giriniz"
+        />
+    </div>
+       <div class="form-group">
+        <label class=" h1 font-weight-light text-white " for="lastName">Soyad</label>
+        <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                placeholder="Soyadınızı Giriniz"
+        />
+    </div>
+       <div class="form-group">
+        <label class=" h1 font-weight-light text-white " for="password1">Şifre</label>
+        <input
+                type="password"
+                class="form-control"
+                id="password1"
+                name="password1"
+                placeholder="Şifre Giriniz"
+        />
+    </div>
+       <div class="form-group">
+        <label class=" h1 font-weight-light text-white " for="password2">Şifre (Doğrulama)</label>
+        <input
+                type="password"
+                class="form-control"
+                id="password2"
+                name="password2"
+                placeholder="Şifreyi Doğrula"
+        />
+    </div>
+    <br />
+    <button type="submit" class=" h3 font-weight-bold btn btn-primary">Kayıt Ol</button>
+    <br/>
+    <br/>
+    <label class=" h5 font-weight-medium text-gray " >Zaten bir hesabınız var mı? Süper :) Hadi o zaman giriş yapalım. </label>
+    <br />
+    <br />
+    <a class=" h3 font-weight-bold btn btn-primary" id="log_in" href="/login">Giriş Sayfası</a>
+</form>
+
+{% endblock %}

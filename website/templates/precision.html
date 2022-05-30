@@ -1,0 +1,126 @@
+{%extends "base.html" %} {% block title %}Tahminatör{% endblock %}
+{% block content %} 
+
+<style>
+  body {
+    background-image: url('https://images.pexels.com/photos/2847648/pexels-photo-2847648.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  #loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: none ;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+
+  </style>
+
+
+
+<body>
+  
+ 
+  <div class="section no-pad-bot" id="index-banner">
+    <div id="loading"></div>
+    <div id="content" class="container">
+      <br />
+      <br />
+      <h1 class="header center">Stock Market Fiyat Tahmin Uygulaması</h1>
+      <br />
+        <br />
+      <div class="row center">
+        <br />
+        <br />
+        <h5 class="header col s12 light">Lütfen işlem yapmak istediğiniz marketi seçiniz.
+        <br>
+        </h5>
+      </div>
+      <form action="/precision" name="info" method="POST">
+        <select class="form-control form-select-lg mb-3" id="info" name="info" aria-label=".form-select-lg example">
+          <option value="GME">GME</option>
+          <option value="BB">BB</option>
+          <option value="PLTR">PLTR</option>
+          <option value="NIO">NIO</option>
+          <option value="SNDL">SNDL</option>
+          <option value="COIN">COIN</option>
+          <option value="AAPL">AAPL</option>
+          <option value="THYAO.IS">THYAO.IS</option>
+          <option value="TUPRS.IS">TUPRS.IS</option>
+          <option value="AKBNK.IS">AKBNK.IS</option>
+          <option value="PETKM.IS">PETKM.IS</option>
+        </select>
+        <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" onClick="loading();">HESAPLA</button>
+
+
+
+      </div>
+      </form>
+      <br />
+        <br />
+
+      <div class=" h3 font-weight-medium text-gray ">
+       Tahmin Edilen Fiyat = <span > {{ output }} </span>
+        <br />
+        <br />
+       Gerçek Fiyat =  {{ output2 }}
+        </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script type="text/javascript">// <![CDATA[
+    function loading(){
+        $("#loading").show();
+        $("#content").hide();       
+    }
+// ]]></script>
+
+  </body>
+
+{% endblock %}
